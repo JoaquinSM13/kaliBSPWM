@@ -80,3 +80,32 @@ echo '----------------------ROFI INSTALADO-----------------------'
 echo '-----------------------------------------------------------'
 
 # EN PRUEBAS
+
+sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
+sudo chmod +x /usr/local/bin/oh-my-posh
+mkdir ~/.poshthemes
+wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/themes.zip -O ~/.poshthemes/themes.zip
+unzip ~/.poshthemes/themes.zip -d ~/.poshthemes
+chmod u+rw ~/.poshthemes/*.omp.*
+rm ~/.poshthemes/themes.zip
+#Escoger Meslo
+oh-my-posh font install
+#ingresar el tema que quieres usar en el ~/.zshrc
+echo 'eval "$(oh-my-posh init zsh --config ~/.poshthemes/hunk.omp.json)"' >> ~/.zshrc
+#comando para ver la terminal con el oh-my-posh
+#os.system("exec zsh")
+
+echo '-----------------------------------------------------------'
+echo '-------------------OH MY POSH INSTALADO--------------------'
+echo '-----------------------------------------------------------'
+
+sudo apt install feh -y
+mkdir ~/Desktop/$username ~/Desktop/$username/images
+cp ~/kaliBSPWM/fondoPantalla.jpg ~/Desktop/$username/images/
+echo "feh --bg-fill /home/$username/Desktop/$username/images/fondoPantalla.jpg" >> ~/.config/bspwm/bspwmrc
+
+#https://www.todofondos.net/downloads/fondo-de-pantalla-4k-sol-neon-para-pc/
+
+echo '-----------------------------------------------------------'
+echo '----------------------FONDO COLOCADO-----------------------'
+echo '-----------------------------------------------------------'
