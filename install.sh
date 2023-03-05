@@ -44,10 +44,10 @@ mkdir ~/.config/sxhkd
 cp ~/Downloads/bspwm/examples/bspwmrc ~/.config/bspwm/
 chmod +x ~/.config/bspwm/bspwmrc
 #cd ~/kaliBSPWM
-cp ~/kaliBSPWM/bspwm/sxhkdrc ~/.config/sxhkd/
+cp ~/kaliBSPWM/bspwm_d/sxhkdrc ~/.config/sxhkd/
 
 mkdir ~/.config/bspwm/scripts
-cp ~/kaliBSPWM/bspwm/bspwm_resize ~/.config/bspwm/scripts/
+cp ~/kaliBSPWM/bspwm_d/bspwm_resize ~/.config/bspwm/scripts/
 chmod +x ~/.config/bspwm/scripts/bspwm_resize
 
 echo '-----------------------------------------------------------'
