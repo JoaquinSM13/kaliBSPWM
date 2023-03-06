@@ -1,22 +1,36 @@
- 
+
+# ------------------------ BIENVENIDOS ------------------------
+# Reemplazar los 'apollo' por el nombre de usuario de sus maquinas
+# ACTUALIZAR EL NOMBRE DEL FIREFOX QUE INSTALEN DE LA PAGINA OFICIAL
+# INK = https://www.mozilla.org/es-ES/firefox/new/
+# Instalar el firefox en la carpeta Downloads
+
 # Agregar esta linea arriba del todo en ~/.config/bspwm/bspwmrc
 # -   wmname LG3D &
 
 username='kali'
+firefox_f="firefox-110.0.1.tar.bz2"
+
+echo ",-. .-.  .--.  ,-.    ,-.,---.      .---. ,---.  .-.  .-.        " 
+echo "| |/ /  / /\ \ | |    |(|| .-.\    ( .-._)| .-.\ | |/\| ||\    /|" 
+echo "| | /  / /__\ \| |    (_)| |-' \  (_) \   | |-' )| /  \ ||(\  / |" 
+echo "| | \  |  __  || |    | || |--. \ _  \ \  | |--' |  /\  |(_)\/  |" 
+echo "| |) \ | |  |)|| `--. | || |`-' /( `-'  ) | |    |(/  \ || \  / |"  by JoaquinSM13
+echo "|((_)-'|_|  (_)|( __.'`-'/( `--'  `----'  /(     (_)   \|| |\/| |" 
+echo "(_)            (_)      (__)             (__)            '-'  '-'" 
 
 echo '-----------------------------------------------------------'
 echo '--------------------ACTUALIZAR SISTEMA---------------------'
 echo '-----------------------------------------------------------'
 
-#sudo apt update -y
-#sudo apt upgrade -y
+sudo apt update -y
+sudo apt upgrade -y
 
 echo '-----------------------------------------------------------'
 echo '------------------INSTALANDO DEPENDENCIAS------------------'
 echo '-----------------------------------------------------------'
 
 sudo apt install build-essential git vim xcb libxcb-util0-dev libxcb-ewmh-dev libxcb-randr0-dev libxcb-icccm4-dev libxcb-keysyms1-dev libxcb-xinerama0-dev libasound2-dev libxcb-xtest0-dev libxcb-shape0-dev -y
-sudo apt install gedit -y
 
 echo '-----------------------------------------------------------'
 echo '-----------------INSTALANDO BSPWM y SXHDK------------------'
@@ -109,3 +123,112 @@ echo "feh --bg-fill /home/$username/Desktop/$username/images/fondoPantalla.jpg" 
 echo '-----------------------------------------------------------'
 echo '----------------------FONDO COLOCADO-----------------------'
 echo '-----------------------------------------------------------'
+
+cd ~/Downloads/
+git clone https://github.com/VaughnValle/blue-sky.git
+cp blue-sky/polybar/* -r ~/.config/polybar/
+echo '~/.config/polybar/./launch.sh' >> ~/.config/bspwm/bspwmrc
+sudo cp blue-sky/polybar/fonts/* /usr/share/fonts/truetype/
+
+rm ~/.config/polybar/workspace.ini
+cp ~/kaliBSPWM/workspace.ini ~/.config/polybar/
+fc-cache -v
+
+echo '-----------------------------------------------------------'
+echo '---------------------POLYBAR COLOCADO----------------------'
+echo '-----------------------------------------------------------'
+
+mkdir ~/.config/picom
+cp ../autoParrot/picom.conf ~/.config/picom/
+echo 'bspc config focus_follows_pointer true' >> ~/.config/bspwm/bspwmrc
+echo 'picom --experimental-backend &' >> ~/.config/bspwm/bspwmrc
+echo 'bspc config border_width 1.5' >> ~/.config/bspwm/bspwmrc
+
+echo '-----------------------------------------------------------'
+echo '----------------------PICOM COLOCADO-----------------------'
+echo '-----------------------------------------------------------'
+
+mkdir ~/.config/bin
+rm -rf ~/.config/polybar/launch.sh
+rm -rf ~/.config/polybar/current.ini
+chmod +x ~/kaliBSPWM/launch.sh
+cp ~/kaliBSPWM/polybar_d/launch.sh ~/.config/polybar/
+cp ~/kaliBSPWM/polybar_d/current.ini ~/.config/polybar/
+
+cp ~/kaliBSPWM/polybar_d/ethernet_status.sh ~/.config/bin/
+cp ~/kaliBSPWM/polybar_d/htb_status.sh ~/.config/bin/
+cp ~/kaliBSPWM/polybar_d/target_to_hack.sh ~/.config/bin/
+chmod +x ~/.config/bin/ethernet_status.sh
+chmod +x ~/.config/bin/htb_status.sh
+chmod +x ~/.config/bin/target_to_hack.sh
+
+mkdir ~/.config/bin/target
+touch ~/.config/bin/target/target.txt
+echo 'function settarget(){' >> ~/.zshrc
+echo "    ip_address=$1" >> ~/.zshrc
+echo "    machine_name=$2" >> ~/.zshrc
+echo "    echo "$ip_address $machine_name" > /home/apollo/.config/bin/target/target.txt" >> ~/.zshrc
+echo '}' >> ~/.zshrc
+
+echo '-----------------------------------------------------------'
+echo '--------------------POLYBAR MODIFICADO---------------------'
+echo '-----------------------------------------------------------'
+
+mkdir -p ~/.config/rofi/themes
+cp ~/Downloads/blue-sky/nord.rasi ~/.config/rofi/themes
+
+echo '-----------------------------------------------------------'
+echo '-------------------ROFI TEMA DESCARGADO--------------------'
+echo '-----------------------------------------------------------'
+
+wget https://github.com/sharkdp/bat/releases/download/v0.22.1/bat_0.22.1_amd64.deb
+sudo dpkg -i bat_0.22.1_amd64.deb
+echo '#Custom Aliases' >> ~/.zshrc
+echo 'alias cat='/bin/bat'' >> ~/.zshrc
+echo 'alias catn='/bin/cat'' >> ~/.zshrc
+echo 'alias catnl='/bin/bat --paging=never'' >> ~/.zshrc
+
+oupdate-alternatives --config java
+
+sudo apt install wmname -y
+sudo apt install ranger -y
+sudo apt install gnome-terminal -y
+sudo apt install sublist3r -y
+sudo apt install tmux -y
+sudo apt install gedit -y
+
+mkdir ~/Downloads/tools   
+wget https://github.com/carlospolop/PEASS-ng/releases/tag/20230101/linpeas.sh -P ~/Downloads/tools/   
+wget https://github.com/carlospolop/PEASS-ng/releases/tag/20230101/winPEASx64.exe -P ~/Downloads/tools/
+mv ~/Downloads/tools/winPEASx64.exe ~/Downloads/tools/winpeas.exe
+
+echo '-----------------------------------------------------------'
+echo '-----------------HERRAMIENTAS DESCARGADAS------------------'
+echo '-----------------------------------------------------------'
+
+echo '-----------------------------------------------------------'
+echo '-------------------INSTALACION FIREFOX---------------------'
+echo '-----------------------------------------------------------'
+
+sudo chown $username:$username /opt/
+
+sudo -u apollo mv /home/$username/Downloads/$firefox_f /opt/
+sudo -u apollo tar -xjf ../../../opt/$firefox_f -C /opt/
+sudo -u apollo rm /opt/$firefox_f
+
+echo '-----------------------------------------------------------'
+echo '---------------------FIREFOX INSTALADO---------------------'
+echo '-----------------------------------------------------------'
+
+sudo apt install firejail -y
+
+echo '-----------------------------------------------------------'
+echo '---------------------FIREJAIL INSTALADO--------------------'
+echo '-----------------------------------------------------------'
+
+echo '-----------------------------------------------------------'
+echo '------------ALT + A PARA GUARDAR TU TEMA ROFI--------------'
+echo '-----------------------------------------------------------'
+
+rofi-theme-selector
+exec zsh
