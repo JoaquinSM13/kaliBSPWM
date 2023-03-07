@@ -126,6 +126,7 @@ echo '-----------------------------------------------------------'
 
 cd ~/Downloads/
 git clone https://github.com/VaughnValle/blue-sky.git
+mkdir ~/.config/polybar
 cp blue-sky/polybar/* -r ~/.config/polybar/
 echo '~/.config/polybar/./launch.sh' >> ~/.config/bspwm/bspwmrc
 sudo cp blue-sky/polybar/fonts/* /usr/share/fonts/truetype/
@@ -139,7 +140,7 @@ echo '---------------------POLYBAR COLOCADO----------------------'
 echo '-----------------------------------------------------------'
 
 mkdir ~/.config/picom
-cp ../autoParrot/picom.conf ~/.config/picom/
+cp ~/kaliBSPWM/picom_d/picom.conf ~/.config/picom/
 echo 'bspc config focus_follows_pointer true' >> ~/.config/bspwm/bspwmrc
 echo 'picom --experimental-backend &' >> ~/.config/bspwm/bspwmrc
 echo 'bspc config border_width 1.5' >> ~/.config/bspwm/bspwmrc
