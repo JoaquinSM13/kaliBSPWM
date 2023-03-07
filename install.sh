@@ -1,3 +1,4 @@
+#!/bin/bash
 
 # ------------------------ BIENVENIDOS ------------------------
 # Reemplazar los 'apollo' por el nombre de usuario de sus maquinas
@@ -11,13 +12,13 @@
 username='kali'
 firefox_f="firefox-110.0.1.tar.bz2"
 
-echo ",-. .-.  .--.  ,-.    ,-.,---.      .---. ,---.  .-.  .-.        " 
-echo "| |/ /  / /\ \ | |    |(|| .-.\    ( .-._)| .-.\ | |/\| ||\    /|" 
-echo "| | /  / /__\ \| |    (_)| |-' \  (_) \   | |-' )| /  \ ||(\  / |" 
-echo "| | \  |  __  || |    | || |--. \ _  \ \  | |--' |  /\  |(_)\/  |" 
-echo "| |) \ | |  |)|| `--. | || |`-' /( `-'  ) | |    |(/  \ || \  / |"  by JoaquinSM13
-echo "|((_)-'|_|  (_)|( __.'`-'/( `--'  `----'  /(     (_)   \|| |\/| |" 
-echo "(_)            (_)      (__)             (__)            '-'  '-'" 
+echo ",-. .-.  .--.  ,-.    ,-.   ,---.      .---. ,---.  .-.  .-.        " 
+echo "l l/ /  / /\ \ l l    l(l   l .-.\    ( .-._)l .-.\ l l/\l ll\    /l" 
+echo "l l /  / /__\ \l l    (_)   l l-' \    \ \   l l-' )l /  \ l  \  / l" 
+echo "l l \  l  __  ll l    l l   l l--. \ _  \ \  l l--' l  /\  l   \/  l" 
+echo "l l) \ l l  l)ll '--. l l   l l'-' /( '-'  ) l l    l(/  \ ll \  / l  by JoaquinSM13"
+echo "l((_)-'l_l  (_)l( __l''-'   /( '--'  '----'  /(     (_)   \ll l\/l l" 
+echo "(_)            (_)         (__)             (__)            '-'  '-'" 
 
 echo '-----------------------------------------------------------'
 echo '--------------------ACTUALIZAR SISTEMA---------------------'
@@ -214,7 +215,7 @@ echo '-----------------------------------------------------------'
 sudo chown $username:$username /opt/
 
 sudo -u apollo mv /home/$username/Downloads/$firefox_f /opt/
-sudo -u apollo tar -xjf ../../../opt/$firefox_f -C /opt/
+sudo -u apollo tar -xjf /opt/$firefox_f -C /opt/
 sudo -u apollo rm /opt/$firefox_f
 
 echo '-----------------------------------------------------------'
