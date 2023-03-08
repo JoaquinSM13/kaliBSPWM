@@ -112,6 +112,7 @@ echo '-----------------------------------------------------------'
 sudo apt install feh -y
 mkdir ~/Desktop/$username ~/Desktop/$username/images
 cp ~/kaliBSPWM/fondoPantalla.jpg ~/Desktop/$username/images/
+cp ~/kaliBSPWM/lockScreen.png ~/Desktop/$username/images/
 echo "feh --bg-fill /home/$username/Desktop/$username/images/fondoPantalla.jpg" >> ~/.config/bspwm/bspwmrc
 
 #https://www.todofondos.net/downloads/fondo-de-pantalla-4k-sol-neon-para-pc/
