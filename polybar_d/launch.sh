@@ -1,24 +1,31 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
-## Add this to your wm startup file.
+# Si quieres depurar cambia a DEBUG=1
+DEBUG=0
 
-# Terminate already running bar instances
+# Termina todas las instacias de polybar
 killall -q polybar
+# Si las barras tienen `ipc` habilitado lo puedes utilizar con
+# polybar-msg cmd quit
 
-## Wait until the processes have been shut down
-while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
-
-## Launch
-
-## Left bar
-polybar log -c ~/.config/polybar/current.ini &
-polybar secondary -c ~/.config/polybar/current.ini &
-polybar terciary -c ~/.config/polybar/current.ini &
-polybar quarternary -c ~/.config/polybar/current.ini &
-
-## Right bar
-polybar primary -c ~/.config/polybar/current.ini &
-polybar quinary -c ~/.config/polybar/current.ini &
-
-## Center bar
-polybar primary -c ~/.config/polybar/workspace.ini &
+# Inicia las barras de estado
+if [ $DEBUG -eq 1 ]
+then
+    echo "---" | tee -a /tmp/polybar1.log /tmp/polybar2.log
+    polybar barDate 2>&1 | tee -a /tmp/polybar1.log & disown
+    polybar barIp 2>&1 | tee -a /tmp/polybar2.log & disown
+    polybar barHTB 2>&1 | tee -a /tmp/polybar3.log & disown
+    polybar workspace 2>&1 | tee -a /tmp/polybar4.log & disown
+    polybar barAudio 2>&1 | tee -a /tmp/polybar5.log & disown
+    polybar barTarget 2>&1 | tee -a /tmp/polybar6.log & disown
+    polybar barMenu 2>&1 | tee -a /tmp/polybar7.log & disown
+else
+    polybar barDate >/dev/null 2>&1 & disown
+    polybar barIp >/dev/null 2>&1 & disown
+    polybar barHTB >/dev/null 2>&1 & disown
+    polybar workspace >/dev/null 2>&1 & disown
+    polybar barAudio >/dev/null 2>&1 & disown
+    polybar barTarget >/dev/null 2>&1 & disown
+    polybar barMenu >/dev/null 2>&1 & disown
+fi
+echo "Barras de estado iniciadas..."

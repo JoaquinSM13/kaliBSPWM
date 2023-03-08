@@ -11,6 +11,7 @@
 
 username='kali'
 firefox_f="firefox-110.0.1.tar.bz2"
+HOME="/home/$username"
 
 echo ",-. .-.  .--.  ,-.    ,-.   ,---.      .---. ,---.  .-.  .-.        " 
 echo "l l/ /  / /\ \ l l    l(l   l .-.\    ( .-._)l .-.\ l l/\l ll\    /l" 
@@ -69,12 +70,6 @@ echo '-----------------------------------------------------------'
 echo '--------------------BSPWM CONFIGURADO----------------------'
 echo '-----------------------------------------------------------'
 
-sudo apt install polybar -y
-
-echo '-----------------------------------------------------------'
-echo '--------------------POLYBAR INSTALADO----------------------'
-echo '-----------------------------------------------------------'
-
 sudo apt install libpcre3-dev libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-dpms0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl-dev libegl-dev libpcre2-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev meson -y
 cd ~/Downloads/
 git clone https://github.com/ibhagwan/picom.git
@@ -125,21 +120,6 @@ echo '-----------------------------------------------------------'
 echo '----------------------FONDO COLOCADO-----------------------'
 echo '-----------------------------------------------------------'
 
-cd ~/Downloads/
-git clone https://github.com/VaughnValle/blue-sky.git
-mkdir ~/.config/polybar
-cp blue-sky/polybar/* -r ~/.config/polybar/
-echo '~/.config/polybar/./launch.sh' >> ~/.config/bspwm/bspwmrc
-sudo cp blue-sky/polybar/fonts/* /usr/share/fonts/truetype/
-
-rm ~/.config/polybar/workspace.ini
-cp ~/kaliBSPWM/workspace.ini ~/.config/polybar/
-fc-cache -v
-
-echo '-----------------------------------------------------------'
-echo '---------------------POLYBAR COLOCADO----------------------'
-echo '-----------------------------------------------------------'
-
 mkdir ~/.config/picom
 cp ~/kaliBSPWM/picom_d/picom.conf ~/.config/picom/
 echo 'bspc config focus_follows_pointer true' >> ~/.config/bspwm/bspwmrc
@@ -150,27 +130,39 @@ echo '-----------------------------------------------------------'
 echo '----------------------PICOM COLOCADO-----------------------'
 echo '-----------------------------------------------------------'
 
-mkdir ~/.config/bin
-rm -rf ~/.config/polybar/launch.sh
-rm -rf ~/.config/polybar/current.ini
-chmod +x ~/kaliBSPWM/launch.sh
+sudo apt install polybar -y
+cd ~/Downloads/
+git clone https://github.com/VaughnValle/blue-sky.git
+sudo cp blue-sky/polybar/fonts/* /usr/share/fonts/truetype/
+mkdir -p ~/.config/polybar/
+mkdir ~/.config/polybar/scripts/
 cp ~/kaliBSPWM/polybar_d/launch.sh ~/.config/polybar/
-cp ~/kaliBSPWM/polybar_d/current.ini ~/.config/polybar/
+cp ~/kaliBSPWM/polybar_d/config.ini ~/.config/polybar/
+cp ~/kaliBSPWM/polybar_d/scripts/* ~/.config/polybar/scripts/
+chmod +x  ~/.config/polybar/scripts/powermenu
+chmod +x ~/.config/polybar/launch.sh
+echo '$HOME/.config/polybar/launch.sh' >> ~/.config/bspwm/bspwmrc
 
-cp ~/kaliBSPWM/polybar_d/ethernet_status.sh ~/.config/bin/
+fc-cache -v
+
+echo '-----------------------------------------------------------'
+echo '---------------------POLYBAR COLOCADO----------------------'
+echo '-----------------------------------------------------------'
+
+mkdir ~/.config/bin
 cp ~/kaliBSPWM/polybar_d/htb_status.sh ~/.config/bin/
 cp ~/kaliBSPWM/polybar_d/target_to_hack.sh ~/.config/bin/
-chmod +x ~/.config/bin/ethernet_status.sh
 chmod +x ~/.config/bin/htb_status.sh
 chmod +x ~/.config/bin/target_to_hack.sh
 
 mkdir ~/.config/bin/target
 touch ~/.config/bin/target/target.txt
 echo 'function settarget(){' >> ~/.zshrc
-echo "    ip_address=$1" >> ~/.zshrc
-echo "    machine_name=$2" >> ~/.zshrc
-echo "    echo "$ip_address $machine_name" > /home/apollo/.config/bin/target/target.txt" >> ~/.zshrc
+echo '    ip_address=$1' >> ~/.zshrc
+echo '    machine_name=$2' >> ~/.zshrc
+echo '    echo "$ip_address $machine_name" > $HOME/.config/bin/target/target.txt' >> ~/.zshrc
 echo '}' >> ~/.zshrc
+
 
 echo '-----------------------------------------------------------'
 echo '--------------------POLYBAR MODIFICADO---------------------'
@@ -208,15 +200,21 @@ echo '-----------------------------------------------------------'
 echo '-----------------HERRAMIENTAS DESCARGADAS------------------'
 echo '-----------------------------------------------------------'
 
+sudo apt install i3lock -y
+
+echo '-----------------------------------------------------------'
+echo '---------------------I3 Lock INSTALADO---------------------'
+echo '-----------------------------------------------------------'
+
 echo '-----------------------------------------------------------'
 echo '-------------------INSTALACION FIREFOX---------------------'
 echo '-----------------------------------------------------------'
 
 sudo chown $username:$username /opt/
 
-sudo -u apollo mv /home/$username/Downloads/$firefox_f /opt/
-sudo -u apollo tar -xjf /opt/$firefox_f -C /opt/
-sudo -u apollo rm /opt/$firefox_f
+sudo -u $username mv /home/$username/Downloads/$firefox_f /opt/
+sudo -u $username tar -xjf /opt/$firefox_f -C /opt/
+sudo -u $username rm /opt/$firefox_f
 
 echo '-----------------------------------------------------------'
 echo '---------------------FIREFOX INSTALADO---------------------'
