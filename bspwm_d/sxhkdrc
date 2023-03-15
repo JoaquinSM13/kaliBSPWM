@@ -91,11 +91,17 @@ super + ctrl + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 # Custom move/resize
 alt + super + {Left,Down,Up,Right}
-	/home/kali/.config/bspwm/scripts/bspwm_resize {west,south,north,east}
+	$HOME/.config/bspwm/scripts/bspwm_resize {west,south,north,east}
 # Open Firefox
 super + shift + f
 	firejail /opt/firefox/firefox
 # i3lock
 super + shift + l
 	/usr/bin/i3lock i3lock -i $HOME/Desktop/kali/images/lockScreen.png -e
+# Open Folder Manager
+super + shift + d
+	/usr/bin/dolphin
+# Open Spotify
+super + shift + s
+	/usr/bin/spotify
 	

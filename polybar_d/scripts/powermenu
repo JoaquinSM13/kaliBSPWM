@@ -3,7 +3,6 @@
 
 rofi_command="rofi -theme $HOME/.config/polybar/scripts/powermenu.rasi"
 username='kali'
-image="home/$username/Desktop/$username/images/lockScreen.png"
 
 uptime=$(uptime -p | sed -e 's/up //g')
 
@@ -26,7 +25,7 @@ case $chosen in
         systemctl reboot
         ;;
     $lock)
-        i3lock -i $image -e
+        i3lock -i $HOME/Desktop/$username/images/lockScreen.png -e
         ;;
     $suspend)
         mpc -q pause
