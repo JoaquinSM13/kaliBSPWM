@@ -6,6 +6,12 @@
 # INK = https://www.mozilla.org/es-ES/firefox/new/
 # Instalar el firefox en la carpeta Downloads
 
+# Si al entrar con sudo su -> no aparece el oh-my-posh
+# Correr estas lineas como usuario root
+# chmod u+rw /root/.poshthemes/*.omp.*
+# echo 'eval "$(oh-my-posh init zsh --config ~/.poshthemes/hunk.omp.json)"' >> /root/.zshrc
+#
+#
 # Agregar esta linea arriba del todo en ~/.config/bspwm/bspwmrc
 # -   wmname LG3D &
 
@@ -57,7 +63,7 @@ echo '-----------------------------------------------------------'
 mkdir ~/.config/bspwm
 mkdir ~/.config/sxhkd
 #cd ~/Downloads/bspwm/
-cp ~/Downloads/bspwm/examples/bspwmrc ~/.config/bspwm/
+cp ~/kaliBSPWM/bspwm_d/bspwmrc ~/.config/bspwm/
 chmod +x ~/.config/bspwm/bspwmrc
 #cd ~/kaliBSPWM
 cp ~/kaliBSPWM/bspwm_d/sxhkdrc ~/.config/sxhkd/
@@ -102,8 +108,12 @@ rm ~/.poshthemes/themes.zip
 oh-my-posh font install
 #ingresar el tema que quieres usar en el ~/.zshrc
 echo 'eval "$(oh-my-posh init zsh --config ~/.poshthemes/hunk.omp.json)"' >> ~/.zshrc
-#comando para ver la terminal con el oh-my-posh
-#os.system("exec zsh")
+
+sudo -u root mkdir /root/.poshthemes
+sudo -u root wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/themes.zip -O /root/.poshthemes/themes.zip
+sudo -u root unzip /root/.poshthemes/themes.zip -d /root/.poshthemes
+sudo -u root chmod u+rw /root/.poshthemes/*.omp.*
+sudo -u root echo 'eval "$(oh-my-posh init zsh --config ~/.poshthemes/hunk.omp.json)"' >> /root/.zshrc
 
 echo '-----------------------------------------------------------'
 echo '-------------------OH MY POSH INSTALADO--------------------'
@@ -113,7 +123,7 @@ sudo apt install feh -y
 mkdir ~/Desktop/$username ~/Desktop/$username/images
 cp ~/kaliBSPWM/fondoPantalla.jpg ~/Desktop/$username/images/
 cp ~/kaliBSPWM/lockScreen.png ~/Desktop/$username/images/
-echo "feh --bg-fill /home/$username/Desktop/$username/images/fondoPantalla.jpg" >> ~/.config/bspwm/bspwmrc
+#echo "feh --bg-fill /home/$username/Desktop/$username/images/fondoPantalla.jpg" >> ~/.config/bspwm/bspwmrc
 
 #https://www.todofondos.net/downloads/fondo-de-pantalla-4k-sol-neon-para-pc/
 
@@ -123,9 +133,9 @@ echo '-----------------------------------------------------------'
 
 mkdir ~/.config/picom
 cp ~/kaliBSPWM/picom_d/picom.conf ~/.config/picom/
-echo 'bspc config focus_follows_pointer true' >> ~/.config/bspwm/bspwmrc
-echo 'picom --experimental-backend &' >> ~/.config/bspwm/bspwmrc
-echo 'bspc config border_width 1.5' >> ~/.config/bspwm/bspwmrc
+#echo 'bspc config focus_follows_pointer true' >> ~/.config/bspwm/bspwmrc
+#echo 'picom --experimental-backend &' >> ~/.config/bspwm/bspwmrc
+#echo 'bspc config border_width 1.5' >> ~/.config/bspwm/bspwmrc
 
 echo '-----------------------------------------------------------'
 echo '----------------------PICOM COLOCADO-----------------------'
@@ -142,7 +152,7 @@ cp ~/kaliBSPWM/polybar_d/config.ini ~/.config/polybar/
 cp ~/kaliBSPWM/polybar_d/scripts/* ~/.config/polybar/scripts/
 chmod +x  ~/.config/polybar/scripts/powermenu
 chmod +x ~/.config/polybar/launch.sh
-echo '$HOME/.config/polybar/launch.sh' >> ~/.config/bspwm/bspwmrc
+#echo '$HOME/.config/polybar/launch.sh' >> ~/.config/bspwm/bspwmrc
 
 fc-cache -v
 
@@ -185,14 +195,21 @@ echo 'alias catnl='/bin/bat --paging=never'' >> ~/.zshrc
 
 oupdate-alternatives --config java
 
+gzip -d rockyou.txt.gz
 sudo apt install wmname -y
 sudo apt install ranger -y
 sudo apt install gnome-terminal -y
 sudo apt install sublist3r -y
 sudo apt install tmux -y
 sudo apt install gedit -y
+sudo apt install gobuster -y
+sudo apt install dolphin -y
+sudo apt install libreoffice-java-common -y
+sudo apt install okular -y
 
-mkdir ~/Downloads/tools   
+mkdir ~/Downloads/tools
+wget https://github.com/RickdeJager/stegseek/releases/download/v0.6/stegseek_0.6-1.deb -P ~/Downloads/tools/ 
+sudo apt install ~/Downloads/tools/stegseek_0.6-1.deb 
 wget https://github.com/carlospolop/PEASS-ng/releases/tag/20230101/linpeas.sh -P ~/Downloads/tools/   
 wget https://github.com/carlospolop/PEASS-ng/releases/tag/20230101/winPEASx64.exe -P ~/Downloads/tools/
 mv ~/Downloads/tools/winPEASx64.exe ~/Downloads/tools/winpeas.exe
@@ -225,6 +242,39 @@ sudo apt install firejail -y
 
 echo '-----------------------------------------------------------'
 echo '---------------------FIREJAIL INSTALADO--------------------'
+echo '-----------------------------------------------------------'
+
+curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
+echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+sudo apt-get update -y
+sudo apt-get install spotify-client -y
+
+echo '-----------------------------------------------------------'
+echo '---------------------SPOTIFY INSTALADO---------------------'
+echo '-----------------------------------------------------------'
+
+curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-cli/master/install.sh | sh
+sudo chmod a+wr /usr/share/spotify
+sudo chmod a+wr /usr/share/spotify/Apps -R
+cd ~/.spicetify
+./spicetify backup apply enable-devtool
+cd /home/$username
+git clone https://github.com/spicetify/spicetify-themes.git
+cp -r spicetify-themes/* ~/.config/spicetify/Themes
+~/.spicetify/spicetify config current_theme Ziro
+~/.spicetify/spicetify config color_scheme Rose-Pine-Moon
+~/.spicetify/spicetify apply
+
+echo '-----------------------------------------------------------'
+echo '-------------------SPICETIFY INSTALADO---------------------'
+echo '-----------------------------------------------------------'
+
+cp ~/kaliBSPWM/spicetify_d/adblock.js ~/.config/spicetify/Extensions/
+~/.spicetify/spicetify config extensions adblock.js
+~/.spicetify/spicetify apply
+
+echo '-----------------------------------------------------------'
+echo '------------------SPICETIFY EXTENSIONES--------------------'
 echo '-----------------------------------------------------------'
 
 echo '-----------------------------------------------------------'
