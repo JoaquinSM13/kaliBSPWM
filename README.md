@@ -2,6 +2,11 @@
 
 Este script de instalación automatiza la instalación de BSPWM, Picom y Polybar en un sistema operativo basado en Linux. El script está escrito en Bash y se llama install.sh.
 
+## PREVIEW
+
+![](preview/Kali1.png)
+![](preview/Kali2.png)
+
 ## Requisitos previos
 
 Antes de ejecutar este script, asegúrate de tener los siguientes requisitos previos instalados en tu sistema:
@@ -22,6 +27,10 @@ Ejecuta el siguiente comando para dar permisos de ejecución al script
 Ejecuta el script con el siguiente comando: 
 
 ```./install.sh.```
+
+Pdst: 
+- Si el programa pide autorizacion darle a la tecla "Y"
+- Cuando pregunta por el font, el font que yo he probado y funciona es el "MESLO"
 
 ## Funcionamiento del script
 
