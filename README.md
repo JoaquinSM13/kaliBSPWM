@@ -1,6 +1,7 @@
 # kaliBSPWM
 
 Este script de instalación automatiza la instalación de BSPWM, Picom y Polybar en un sistema operativo basado en Linux. El script está escrito en Bash y se llama install.sh.
+**IMPORTANTE LEER TODO EL README.md**
 
 ## PREVIEW
 
@@ -12,6 +13,7 @@ Este script de instalación automatiza la instalación de BSPWM, Picom y Polybar
 Antes de ejecutar este script, asegúrate de tener los siguientes requisitos previos instalados en tu sistema:
 
 - **git**: necesario para clonar los repositorios de BSPWM, Picom y Polybar.
+- Tener el controlador grafico en configuraciones **VBoxSVGA** para una correcta visualizacion. 
 
 ## Uso
 Para ejecutar el script, sigue los siguientes pasos:
