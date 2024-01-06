@@ -200,7 +200,7 @@ sudo apt install okular -y
 
 mkdir ~/Downloads/tools
 wget https://github.com/RickdeJager/stegseek/releases/download/v0.6/stegseek_0.6-1.deb -P ~/Downloads/tools/ 
-sudo apt install ~/Downloads/tools/stegseek_0.6-1.deb 
+sudo apt install ~/Downloads/tools/stegseek_0.6-1.deb -y
 wget https://github.com/carlospolop/PEASS-ng/releases/tag/20230101/linpeas.sh -P ~/Downloads/tools/   
 wget https://github.com/carlospolop/PEASS-ng/releases/tag/20230101/winPEASx64.exe -P ~/Downloads/tools/
 mv ~/Downloads/tools/winPEASx64.exe ~/Downloads/tools/winpeas.exe
