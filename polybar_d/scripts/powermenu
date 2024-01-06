@@ -2,7 +2,7 @@
 
 
 rofi_command="rofi -theme $HOME/.config/polybar/scripts/powermenu.rasi"
-username='kali'
+username=$(whoami)
 
 uptime=$(uptime -p | sed -e 's/up //g')
 
