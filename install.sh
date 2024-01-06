@@ -15,8 +15,7 @@
 # Agregar esta linea arriba del todo en ~/.config/bspwm/bspwmrc
 # -   wmname LG3D &
 
-username='kali'
-firefox_f="firefox-110.0.1.tar.bz2"
+username=$(whoami)
 HOME="/home/$username"
 
 echo ",-. .-.  .--.  ,-.    ,-.   ,---.      .---. ,---.  .-.  .-.        " 
@@ -224,25 +223,25 @@ echo '-----------------------------------------------------------'
 echo '---------------------I3 Lock INSTALADO---------------------'
 echo '-----------------------------------------------------------'
 
-echo '-----------------------------------------------------------'
-echo '-------------------INSTALACION FIREFOX---------------------'
-echo '-----------------------------------------------------------'
+#echo '-----------------------------------------------------------'
+#echo '-------------------INSTALACION FIREFOX---------------------'
+#echo '-----------------------------------------------------------'
 
-sudo chown $username:$username /opt/
+#sudo chown $username:$username /opt/
 
-sudo -u $username mv /home/$username/Downloads/$firefox_f /opt/
-sudo -u $username tar -xjf /opt/$firefox_f -C /opt/
-sudo -u $username rm /opt/$firefox_f
+#sudo -u $username mv /home/$username/Downloads/$firefox_f /opt/
+#sudo -u $username tar -xjf /opt/$firefox_f -C /opt/
+#sudo -u $username rm /opt/$firefox_f
 
-echo '-----------------------------------------------------------'
-echo '---------------------FIREFOX INSTALADO---------------------'
-echo '-----------------------------------------------------------'
+#echo '-----------------------------------------------------------'
+#echo '---------------------FIREFOX INSTALADO---------------------'
+#echo '-----------------------------------------------------------'
 
-sudo apt install firejail -y
+#sudo apt install firejail -y
 
-echo '-----------------------------------------------------------'
-echo '---------------------FIREJAIL INSTALADO--------------------'
-echo '-----------------------------------------------------------'
+#echo '-----------------------------------------------------------'
+#echo '---------------------FIREJAIL INSTALADO--------------------'
+#echo '-----------------------------------------------------------'
 
 curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
