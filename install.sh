@@ -1,19 +1,11 @@
 #!/bin/bash
 
 # ------------------------ BIENVENIDOS ------------------------
-# Reemplazar los 'apollo' por el nombre de usuario de sus maquinas
-# ACTUALIZAR EL NOMBRE DEL FIREFOX QUE INSTALEN DE LA PAGINA OFICIAL
-# INK = https://www.mozilla.org/es-ES/firefox/new/
-# Instalar el firefox en la carpeta Downloads
 
 # Si al entrar con sudo su -> no aparece el oh-my-posh
 # Correr estas lineas como usuario root
 # chmod u+rw /root/.poshthemes/*.omp.*
 # echo 'eval "$(oh-my-posh init zsh --config ~/.poshthemes/hunk.omp.json)"' >> /root/.zshrc
-#
-#
-# Agregar esta linea arriba del todo en ~/.config/bspwm/bspwmrc
-# -   wmname LG3D &
 
 username=$(whoami)
 HOME="/home/$username"
@@ -222,26 +214,6 @@ sudo apt install i3lock -y
 echo '-----------------------------------------------------------'
 echo '---------------------I3 Lock INSTALADO---------------------'
 echo '-----------------------------------------------------------'
-
-#echo '-----------------------------------------------------------'
-#echo '-------------------INSTALACION FIREFOX---------------------'
-#echo '-----------------------------------------------------------'
-
-#sudo chown $username:$username /opt/
-
-#sudo -u $username mv /home/$username/Downloads/$firefox_f /opt/
-#sudo -u $username tar -xjf /opt/$firefox_f -C /opt/
-#sudo -u $username rm /opt/$firefox_f
-
-#echo '-----------------------------------------------------------'
-#echo '---------------------FIREFOX INSTALADO---------------------'
-#echo '-----------------------------------------------------------'
-
-#sudo apt install firejail -y
-
-#echo '-----------------------------------------------------------'
-#echo '---------------------FIREJAIL INSTALADO--------------------'
-#echo '-----------------------------------------------------------'
 
 curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
