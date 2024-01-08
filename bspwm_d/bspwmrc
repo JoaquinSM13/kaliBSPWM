@@ -21,6 +21,6 @@ bspc rule -a Screenkey manage=off
 feh --bg-fill $HOME/Desktop/images/fondoPantalla.jpg
 xrandr --output $MONITOR --mode 1920x1080
 bspc config focus_follows_pointer true
-picom --experimental-backend &
+picom &
 bspc config border_width 1.5
 $HOME/.config/polybar/launch.sh
