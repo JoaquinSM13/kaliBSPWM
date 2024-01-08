@@ -75,7 +75,7 @@ echo '-----------------------------------------------------------'
 echo '----------------------PICOM INSTALADO----------------------'
 echo '-----------------------------------------------------------'
 
-cp kaliBSPWM/picom_d/picom.conf ~/.config/picom.conf
+cp ~/kaliBSPWM/picom_d/picom.conf ~/.config/picom.conf
 cd ~/Downloads
 git clone https://github.com/ibhagwan/picom.git
 cd picom
