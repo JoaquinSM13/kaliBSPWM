@@ -20,15 +20,15 @@ Para ejecutar el script, sigue los siguientes pasos:
 
 Clona el repositorio
 
-```git clone https://github.com/JoaquinSM13/kaliBSPWM.git ```
-```cd kaliBSPWM/```
+- ```git clone https://github.com/JoaquinSM13/kaliBSPWM.git ```
+- ```cd kaliBSPWM/```
 
 Ejecuta el siguiente comando para dar permisos de ejecución al script
-```chmod +x install.sh.```
+- ```chmod +x install.sh.```
 
 Ejecuta el script con el siguiente comando: 
 
-```./install.sh.```
+- ```./install.sh.```
 
 Recomendaciones: 
 - Cuando pregunta por el font, el font que yo he probado y funciona es el "MESLO"
