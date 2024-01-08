@@ -107,9 +107,9 @@ echo '-------------------OH MY POSH INSTALADO--------------------'
 echo '-----------------------------------------------------------'
 
 sudo apt install feh -y
-mkdir ~/Desktop/$username ~/Desktop/$username/images
-cp ~/kaliBSPWM/fondoPantalla.jpg ~/Desktop/$username/images/
-cp ~/kaliBSPWM/lockScreen.png ~/Desktop/$username/images/
+mkdir ~/Desktop/images
+cp ~/kaliBSPWM/fondoPantalla.jpg ~/Desktop/images/
+cp ~/kaliBSPWM/lockScreen.png ~/Desktop/images/
 
 echo '-----------------------------------------------------------'
 echo '----------------------FONDO COLOCADO-----------------------'
