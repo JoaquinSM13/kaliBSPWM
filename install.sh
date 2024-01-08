@@ -23,7 +23,7 @@ echo '--------------------ACTUALIZAR SISTEMA---------------------'
 echo '-----------------------------------------------------------'
 
 sudo apt update -y
-#sudo apt upgrade -y
+sudo apt upgrade -y
 
 echo '-----------------------------------------------------------'
 echo '------------------INSTALANDO DEPENDENCIAS------------------'
