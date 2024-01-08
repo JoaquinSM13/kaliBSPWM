@@ -18,7 +18,7 @@ bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
-feh --bg-fill $HOME/Desktop/$USERNAME/images/fondoPantalla.jpg
+feh --bg-fill $HOME/Desktop/images/fondoPantalla.jpg
 xrandr --output $MONITOR --mode 1920x1080
 bspc config focus_follows_pointer true
 picom --experimental-backend &
