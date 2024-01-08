@@ -3,7 +3,7 @@
 #
 # terminal emulator
 super + Return
-	gnome-terminal
+	qterminal &
 # program launcher
 super + d
 	rofi -show run
