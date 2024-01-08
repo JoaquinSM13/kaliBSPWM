@@ -98,6 +98,9 @@ super + shift + f
 # i3lock
 super + shift + l
 	/usr/bin/i3lock i3lock -i $HOME/Desktop/kali/images/lockScreen.png -e
+# Open Burpsuite
+super + shift + b
+	/usr/bin/burpsuite
 # Open Folder Manager
 super + shift + d
 	/usr/bin/dolphin
