@@ -23,7 +23,7 @@ echo '--------------------ACTUALIZAR SISTEMA---------------------'
 echo '-----------------------------------------------------------'
 
 sudo apt update -y
-sudo apt upgrade -y
+#sudo apt upgrade -y
 
 echo '-----------------------------------------------------------'
 echo '------------------INSTALANDO DEPENDENCIAS------------------'
@@ -53,10 +53,8 @@ echo '-----------------------------------------------------------'
 
 mkdir ~/.config/bspwm
 mkdir ~/.config/sxhkd
-#cd ~/Downloads/bspwm/
 cp ~/kaliBSPWM/bspwm_d/bspwmrc ~/.config/bspwm/
 chmod +x ~/.config/bspwm/bspwmrc
-#cd ~/kaliBSPWM
 cp ~/kaliBSPWM/bspwm_d/sxhkdrc ~/.config/sxhkd/
 
 mkdir ~/.config/bspwm/scripts
@@ -86,8 +84,6 @@ echo '-----------------------------------------------------------'
 echo '----------------------ROFI INSTALADO-----------------------'
 echo '-----------------------------------------------------------'
 
-# EN PRUEBAS
-
 sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
 sudo chmod +x /usr/local/bin/oh-my-posh
 mkdir ~/.poshthemes
@@ -114,9 +110,6 @@ sudo apt install feh -y
 mkdir ~/Desktop/$username ~/Desktop/$username/images
 cp ~/kaliBSPWM/fondoPantalla.jpg ~/Desktop/$username/images/
 cp ~/kaliBSPWM/lockScreen.png ~/Desktop/$username/images/
-#echo "feh --bg-fill /home/$username/Desktop/$username/images/fondoPantalla.jpg" >> ~/.config/bspwm/bspwmrc
-
-#https://www.todofondos.net/downloads/fondo-de-pantalla-4k-sol-neon-para-pc/
 
 echo '-----------------------------------------------------------'
 echo '----------------------FONDO COLOCADO-----------------------'
@@ -124,9 +117,6 @@ echo '-----------------------------------------------------------'
 
 mkdir ~/.config/picom
 cp ~/kaliBSPWM/picom_d/picom.conf ~/.config/picom/
-#echo 'bspc config focus_follows_pointer true' >> ~/.config/bspwm/bspwmrc
-#echo 'picom --experimental-backend &' >> ~/.config/bspwm/bspwmrc
-#echo 'bspc config border_width 1.5' >> ~/.config/bspwm/bspwmrc
 
 echo '-----------------------------------------------------------'
 echo '----------------------PICOM COLOCADO-----------------------'
@@ -143,7 +133,6 @@ cp ~/kaliBSPWM/polybar_d/config.ini ~/.config/polybar/
 cp ~/kaliBSPWM/polybar_d/scripts/* ~/.config/polybar/scripts/
 chmod +x  ~/.config/polybar/scripts/powermenu
 chmod +x ~/.config/polybar/launch.sh
-#echo '$HOME/.config/polybar/launch.sh' >> ~/.config/bspwm/bspwmrc
 
 fc-cache -v
 
@@ -189,8 +178,8 @@ oupdate-alternatives --config java
 gzip -d rockyou.txt.gz
 sudo apt install wmname -y
 sudo apt install ranger -y
-sudo apt install gnome-terminal -y
 sudo apt install sublist3r -y
+sudo apt install seclists -y
 sudo apt install tmux -y
 sudo apt install gedit -y
 sudo apt install gobuster -y
