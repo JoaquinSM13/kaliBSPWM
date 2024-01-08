@@ -30,8 +30,7 @@ Ejecuta el script con el siguiente comando:
 
 ```./install.sh.```
 
-Pdst: 
-- Si el programa pide autorizacion darle a la tecla "Y"
+Recomendaciones: 
 - Cuando pregunta por el font, el font que yo he probado y funciona es el "MESLO"
 
 ## Funcionamiento del script
@@ -47,7 +46,7 @@ El script de instalación de BSPWM, Picom y Polybar funciona de la siguiente man
 Si deseas personalizar la configuración de BSPWM, Picom o Polybar, puedes hacerlo después de la instalación. Los archivos de configuración se encuentran en los siguientes directorios:
 
 - **BSPWM:** ~/.config/bspwm/
-- **Picom:** ~/.config/picom/
+- **Picom:** ~/.config/picom.conf
 - **Polybar:** ~/.config/polybar/
 
 ## Contribución
