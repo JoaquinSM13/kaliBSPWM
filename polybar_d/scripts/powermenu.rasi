@@ -17,13 +17,13 @@ configuration {
 
 window {
     transparency:                   "real";
-    background-color:               @background;
+    background-color:               @background-alt;
     text-color:                     @foreground;
     border-radius:                  20px;
     height:                         22%;
     width:                          12%;
     x-offset:                       -30;
-    y-offset:                       70;
+    y-offset:                       72%;
 }
 
 prompt {
