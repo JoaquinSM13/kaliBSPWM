@@ -107,4 +107,6 @@ super + shift + d
 # Open Spotify
 super + shift + s
 	/usr/bin/spotify
-	
+# Open Flameshot
+Print
+	/usr/bin/flameshot gui
