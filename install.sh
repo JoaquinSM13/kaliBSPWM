@@ -163,7 +163,7 @@ echo '--------------------POLYBAR MODIFICADO---------------------'
 echo '-----------------------------------------------------------'
 
 mkdir -p ~/.config/rofi/themes
-curl "https://raw.githubusercontent.com/newmanls/rofi-themes-collection/master/themes/spotlight.rasi" >> ~/.config/rofi/spot.rasi
+curl "https://raw.githubusercontent.com/newmanls/rofi-themes-collection/master/themes/spotlight.rasi" >> ~/.config/rofi/spotlight.rasi
 cp ~/Downloads/blue-sky/nord.rasi ~/.config/rofi/themes
 
 echo '-----------------------------------------------------------'
