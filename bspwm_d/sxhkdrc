@@ -97,7 +97,7 @@ super + shift + f
 	/usr/lib/firefox-esr/firefox-esr
 # i3lock
 super + shift + l
-	/usr/bin/i3lock i3lock -i $HOME/Desktop/kali/images/lockScreen.png -e
+	/usr/bin/i3lock i3lock -i $HOME/Desktop/images/lockScreen.png -e
 # Open Burpsuite
 super + shift + b
 	/usr/bin/burpsuite
