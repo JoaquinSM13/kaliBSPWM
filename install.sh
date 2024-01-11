@@ -189,6 +189,7 @@ sudo gzip -d /usr/share/wordlists/rockyou.txt.gz
 sudo apt install wmname -y
 sudo apt install ranger -y
 sudo apt install sublist3r -y
+sudo apt install dirsearch -y
 sudo apt install seclists -y
 sudo apt install tmux -y
 sudo apt install gedit -y
