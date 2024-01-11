@@ -185,7 +185,7 @@ echo 'alias catnl='/bin/bat --paging=never'' >> ~/.zshrc
 
 oupdate-alternatives --config java
 
-gzip -d rockyou.txt.gz
+sudo gzip -d /usr/share/wordlists/rockyou.txt.gz
 sudo apt install wmname -y
 sudo apt install ranger -y
 sudo apt install sublist3r -y
