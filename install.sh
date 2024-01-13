@@ -224,28 +224,14 @@ echo '-----------------------------------------------------------'
 echo '---------------------SPOTIFY INSTALADO---------------------'
 echo '-----------------------------------------------------------'
 
-#curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-cli/master/install.sh | sh
-#sudo chmod a+wr /usr/share/spotify
-#sudo chmod a+wr /usr/share/spotify/Apps -R
-#cd ~/.spicetify
-#./spicetify backup apply enable-devtool
-#cd /home/$username
-#git clone https://github.com/spicetify/spicetify-themes.git
-#cp -r spicetify-themes/* ~/.config/spicetify/Themes
-#~/.spicetify/spicetify config current_theme Ziro
-#~/.spicetify/spicetify config color_scheme Rose-Pine-Moon
-#~/.spicetify/spicetify apply
+curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-cli/master/install.sh | sh
+sudo chmod a+wr /usr/share/spotify
+sudo chmod a+wr /usr/share/spotify/Apps -R
+spicetify backup apply
+curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-marketplace/main/resources/install.sh | sh
 
 echo '-----------------------------------------------------------'
 echo '-------------------SPICETIFY INSTALADO---------------------'
-echo '-----------------------------------------------------------'
-
-#cp ~/kaliBSPWM/spicetify_d/adblock.js ~/.config/spicetify/Extensions/
-#~/.spicetify/spicetify config extensions adblock.js
-#~/.spicetify/spicetify apply
-
-echo '-----------------------------------------------------------'
-echo '------------------SPICETIFY EXTENSIONES--------------------'
 echo '-----------------------------------------------------------'
 
 sudo apt install flameshot -y
