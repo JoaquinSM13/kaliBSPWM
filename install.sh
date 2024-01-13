@@ -2,10 +2,6 @@
 
 # ------------------------ BIENVENIDOS ------------------------
 
-# Si al entrar con sudo su -> no aparece el oh-my-posh
-# Correr estas lineas como usuario root
-# chmod u+rw /root/.poshthemes/*.omp.*
-# echo 'eval "$(oh-my-posh init zsh --config ~/.poshthemes/hunk.omp.json)"' >> /root/.zshrc
 if [ "$(whoami)" == "root" ]; then
     exit 1
 fi
